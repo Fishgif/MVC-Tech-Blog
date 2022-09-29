@@ -3,8 +3,9 @@ const express = require("express");
 const session = require("express-session");
 const exphbs = require("express-handlebars");
 
-// const helpers = require("./utils/helpers");
+const helpers = require("./utils/helpers");
 const webRouter = require('./routes/web/web');
+const authRouter = require('./routes/web/auth');
 const sequelize = require("./config/connection");
 const SequelizeStore = require("connect-session-sequelize")(session.Store);
 
@@ -13,7 +14,7 @@ const PORT = process.env.PORT || 3001;
 
 // Set up Handlebars.js engine with custom helpers
 const hbs = exphbs.create({ 
-  // helpers 
+  helpers 
 });
 
 const sess = {
@@ -37,6 +38,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, "public")));
 
 app.use(webRouter);
+app.use(authRouter);
 
 sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => console.log("Running at http://localhost:" + PORT));

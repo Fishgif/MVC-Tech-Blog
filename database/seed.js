@@ -1,4 +1,7 @@
 
+
+
+
 require('dotenv').config();
 const Sequelize = require("sequelize");
 const { faker } = require("@faker-js/faker");
@@ -12,7 +15,7 @@ async function seedUsers(num = 10) {
 
   for (let index = 0; index < num; index++) {
     const email = faker.internet.email();
-    const password = faker.internet.password(8);
+    const password = "password";
 
     await User.create({
       email,
@@ -20,6 +23,12 @@ async function seedUsers(num = 10) {
     })
     
   }
+
+  await User.create({
+    email: 'marc@marc.com',
+    password: 'password'
+  })
+
 }
 
 async function seedComment(num = 10) {
@@ -69,13 +78,13 @@ async function seedPost(num = 10) {
 
 async function seed() {
   
-    // seed user
+  // seed user
   sequelize.sync({force: true}).then(async () => {
 
     await seedUsers(10);
     // seed post
     await seedPost(10)
-    // seed comment 
+    // seed comment
     await seedComment(5);
   })
 

@@ -6,6 +6,7 @@ const User = require("./User");
 // create our Post model
 class Post extends Model {
 }
+
 Post.init(
   {
     title: {

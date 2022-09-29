@@ -6,7 +6,9 @@ const Post = require("./Post");
 
 // create our Comment model
 class Comment extends Model {
+  
 }
+
 Comment.init(
   {
     body: {
