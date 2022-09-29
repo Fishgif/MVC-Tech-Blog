@@ -1,7 +1,7 @@
 # mvc-tech-blog
 
 ## Description
-This application was allows new users to sign up and existing users to sign in securely 
+This application was allows new users to sign up and existing users to sign in securely. Users are able to post as well as comment on other posts once signed in. 
 
 ## Table of Contents
 - [Description](#description)
@@ -32,7 +32,7 @@ Then open a browser and type http://localhost:3001/ to run this application on y
 
 ## Deployed Link
 
-The link to the deployed application is: https://text-editor123456789.herokuapp.com/
+The link to the deployed application is:  https://fishgif.github.io/MVC-Tech-Blog/
 
 ## Screen Shots
 
